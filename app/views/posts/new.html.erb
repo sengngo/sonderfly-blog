@@ -1,0 +1,10 @@
+
+<section class="post col-xs-10 col-xs-offset-1">
+	<%= simple_form_for @post do |f| %>
+		<%= f.input :title, placeholder: 'Title of your story', :class => 'post_title form-control form-group' %>
+		<%= f.input :intro, placeholder: 'Write a brief introduction', :class => 'post_intro' %>
+		<%= f.input :body, placeholder: 'Tell your story', :class => 'post_body' %>
+		<%= f.submit 'Publish', :class => 'btn btn-primary' %>
+	<% end %>
+
+</section>
