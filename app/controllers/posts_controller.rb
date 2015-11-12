@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		current_user.places.create(place_params)
+		current_user.places.create(post_params)
 		redirect_to root_path
 	end
 
@@ -20,6 +20,12 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		@post.update_attributes(post_params)
+		redirect_to root_path
 	end
 
 	private
