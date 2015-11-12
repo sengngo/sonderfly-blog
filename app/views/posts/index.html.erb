@@ -6,5 +6,9 @@
     <p><%= post.body %></p>
   </div>
 
+	<% if post.user.present? %>
+      <small><%= post.user.email %></small>
+    <% end %>
+
   <hr />
 <% end %>
