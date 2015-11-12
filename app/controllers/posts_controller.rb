@@ -9,8 +9,12 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		current_user.posts.create(post_params)
-		redirect_to root_path
+		@post = current_user.posts.create(post_params)
+		if @post.valid?
+			redirect_to root_path
+		else
+			render :new, :status => :unprocessable_entity
+		end
 	end
 
 	def show
@@ -27,9 +31,16 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
+		@post.update_attributes(post_params)
 		if @post.user != current_user
 			return render :text => 'Not Allowed', :status => :forbidden
 		end
+
+		if @post.valid?
+    	redirect_to root_path
+  	else
+    	render :edit, :status => :unprocessable_entity
+  	end
 	end
 
 	def destroy
