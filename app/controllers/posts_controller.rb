@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, :only => [:new, :create]
-
+	before_action :authenticate_user!, :only => [:new, :create, :edit]
 	def index
   	@posts = Post.all
 	end
@@ -10,7 +9,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		current_user.places.create(post_params)
+		current_user.posts.create(post_params)
 		redirect_to root_path
 	end
 
@@ -20,17 +19,21 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+
+		if @post.user != current_user
+    return render :text => 'Not Allowed', :status => :forbidden
+  end
 	end
 
 	def update
 		@post = Post.find(params[:id])
-		@post.update_attributes(post_params)
-		redirect_to root_path
+		if @post.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
 	end
 
 	def destory
 		@post = Post.find(params[:id])
-		@place.destroy
+		@post.destroy
 		redirect_to root_path
 	end
 
