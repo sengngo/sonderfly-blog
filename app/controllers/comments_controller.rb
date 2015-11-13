@@ -7,6 +7,37 @@ class CommentsController < ApplicationController
 		redirect_to post_path(@post)
 	end
 
+	def edit
+		@comment = Comment.find(params[:id])
+
+		if @comment.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
+
+	def update
+		@comment = Comment.find(params[:id])
+		@comment.update_attributes(comment_params)
+		if @comment.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
+
+		if comment.valid?
+			redirect_to post_path(@post)
+		else
+			render :edit, :status => :unprocessable_entity
+		end
+	end
+
+	def destroy
+		@comment = Comment.find(params[:id])
+		if @comment.user != current_user
+		return render :text => 'Not Allowed', :status => :forbidden
+		end
+		@comment.destroy
+		redirect_to post_path(@post)
+
+	end
+
 	private
 
 	def comment_params
@@ -14,3 +45,5 @@ class CommentsController < ApplicationController
 	end
 
 end
+
+
