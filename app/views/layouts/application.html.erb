@@ -31,7 +31,7 @@
         <% if user_signed_in? %>
           <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
           <% else %>
-         <li><%= link_to 'Sign in', new_user_session_path %></li>
+         <li><%= link_to 'Log in', new_user_session_path %></li>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
         <% end %>
         
@@ -49,13 +49,12 @@
 
 <%= yield %>
 
-	<footer>
-		
-			<a href='#'>About Us</a> &nbsp;• &nbsp;
-			<a href='#'>Guidelines</a> &nbsp; • &nbsp;
-			<a href='#'>FAQ</a> &nbsp; • &nbsp;
-			<a href='#'>Terms and Conditions</a> &nbsp; • &nbsp;
-			<a href='#'>Contact</a>
+	<footer class="col-xs-12">
+		  <%= link_to 'About Us', static_pages_about_path %>&nbsp; • &nbsp;
+      <%= link_to 'Guidelines', '#' %>&nbsp; • &nbsp;
+      <%= link_to 'FAQs', '#' %>&nbsp; • &nbsp;
+      <%= link_to 'Terms and Conditions', '#' %>&nbsp; • &nbsp;
+      <%= link_to 'Contact Sonderfly', static_pages_contact_path %>     
 		<p> Copyright © <%= Date.today.year %> Sonderfly, LLC. All rights reserved. 
 		</p>
 	</footer>

@@ -1,9 +1,10 @@
+
+
 <% @posts.each do |post| %>
  
-  <div class="post-list">
-    <h1><%= link_to post.title, post_path(post) %></h1>
+  <div class="featured_posts">
+    <h2><%= link_to post.title, post_path(post) %></h2>
     <h3><%= post.intro %></h3>
-    <p><%= post.body %></p>
   </div>
 
 	<% if post.user.present? %>

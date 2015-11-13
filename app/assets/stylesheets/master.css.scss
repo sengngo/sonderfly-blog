@@ -1,4 +1,9 @@
-.post-list {
+/*--main --*/
+
+h1 {
+	font-weight: 900;
+	font-style: italic;
+	font-size: 4em;
 }
 
 body {
@@ -8,15 +13,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
+  font-family: Georgia, Serif;
 }
 
 .clear {
     clear: both;
 }
 
-h1 {
-	font-family: Georgia, Serif;
-}
 
 #featured {
 	text-align: center;
@@ -27,7 +30,10 @@ h1 {
 h1, h2, h3, h4, h5, h6, .navbar {
 	margin: 0;
 }
+
+/*-- footer --*/ 
 footer {
+	display: block;
 	text-align: center;
 	color: #C0C0C0;
 }
@@ -42,12 +48,7 @@ footer p {
 	font-size: 1em;
 }
 
-h1 {
-	font-family: Georgia, Serif;
-	font-weight: 900;
-	font-style: italic;
-	font-size: 4em;
-}
+
 
 /* -- Navigation -- */
 
@@ -80,11 +81,6 @@ h1 {
 	margin-bottom: 20px;
 }
 /*-- Post -- */
-#post_cover {
-	max-height: 800px;
-	width: 100%;
-	background-color: #142c3e;
-}
 
 #post_title {
 	text-align: center;
@@ -103,3 +99,12 @@ h1 {
 	text-align: center;
 	width: 100%;
 }
+
+.post-list {
+}
+
+.comment_section {
+	margin-top: 10px;
+	padding-top: 10px;
+}
+

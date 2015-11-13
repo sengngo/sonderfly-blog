@@ -1,6 +1,9 @@
 SonderflyBlog::Application.routes.draw do
+  get "static_pages/home"
+  get "static_pages/contact"
+  get "static_pages/about"
   devise_for :users
-  root 'posts#index'
+  root :to =>'static_pages#home'
   resources :posts do
     resources :comments, :only => :create
   end
