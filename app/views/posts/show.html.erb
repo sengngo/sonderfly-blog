@@ -17,3 +17,14 @@
   <%= f.input :message %>
   <%= f.submit "Publish", :class => 'btn btn-primary' %>
 <% end %>
+
+<h1>Comments</h1>
+
+<% @post.comments.each do |comment| %>
+  <div>
+    <blockquote>
+        <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
