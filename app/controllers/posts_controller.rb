@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 	def create
 		@post = current_user.posts.create(post_params)
 		if @post.valid?
-			redirect_to root_path
+			redirect_to post_path(@post)
 		else
 			render :new, :status => :unprocessable_entity
 		end
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def edit
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
 		end
 
 		if @post.valid?
-    	redirect_to root_path
+    	redirect_to post_path(@post)
   	else
     	render :edit, :status => :unprocessable_entity
   	end
