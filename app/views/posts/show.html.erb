@@ -2,8 +2,9 @@
   <h1><%= @post.title %></h1>
   <i><%= @post.intro %></i>
   <br/><br/>
-  <p><%= @post.body %></p>
-
+  <div class="fr-view">
+    <%= simple_format(@post.body) %>
+  </div>
    <div class="pull-right">
    <% if current_user && current_user == @post.user %>
     <%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %>

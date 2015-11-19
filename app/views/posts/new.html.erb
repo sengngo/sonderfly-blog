@@ -3,8 +3,20 @@
 	<%= simple_form_for @post do |f| %>
 		<%= f.input :title, placeholder: 'Title of your story', :class => 'post_title form-control form-group', label: false  %>
 		<%= f.input :intro, placeholder: 'Write a brief introduction', :class => 'post_intro', label: false %>
-		<%= f.input :body, placeholder: 'Tell your story', :class => 'post_body', label: false %>
+		<%= f.text_area :body, placeholder: 'Tell your story', :id => 'post_body', label: false %>
+	
 		<%= f.submit 'Publish', :class => 'btn btn-primary' %>
 	<% end %>
 
 </section>
+
+  <script>
+     
+          $('#post_body').froalaEditor({
+          	inlineMode: false,
+          	minHeight: '200px',
+          	buttons: ['bold', 'italic', 'underline', 'align', 'insertUnorderedList', 'insertOrderedList', 'indent', 'createLink', 'html']
+          })
+
+
+  </script>
