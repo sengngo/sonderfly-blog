@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+		@photo = Photo.new
 	end
 
 	def create
@@ -15,11 +16,19 @@ class PostsController < ApplicationController
 		else
 			render :new, :status => :unprocessable_entity
 		end
+
+		@photo = current_user.photo.create(photo_params)
+		if @photo.valid?
+			redirect_to post_path(@post)
+		else
+			render :new, :status => :unprocessable_entity
+		end
 	end
 
 	def show
 		@post = Post.find(params[:id])
 		@comment = Comment.new
+		@photo = Photo.find(params[:id])
 	end
 
 	def edit
@@ -58,6 +67,10 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:title, :intro, :body)
+	end
+
+	def photo_params
+		params.require(:photo).permit(:caption)
 	end
 end
 
