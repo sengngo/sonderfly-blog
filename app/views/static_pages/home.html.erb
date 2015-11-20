@@ -11,8 +11,11 @@
 </section>
 
 <section class="post">
+
 <% @posts.each do |post| %>
- 
+ 	<div class="">
+ 		<%= image_tag post.cover_photo, :class => "img_responsive" %>
+ 	</div>
   <div class="featured_posts third_page float">
     <h2><%= link_to post.title, post_path(post) %></h2>
     <h3><%= post.intro %></h3>

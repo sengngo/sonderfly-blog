@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
-  has_many :photos
+  has_many :cover_photos
 end

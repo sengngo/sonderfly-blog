@@ -36,7 +36,9 @@ gem 'devise', '>= 3.2.4'
 gem "wysiwyg-rails"
 
 gem "font-awesome-rails"
-# gem 'carrierwave'
+gem 'carrierwave'
+
+gem 'carrierwave-aws'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

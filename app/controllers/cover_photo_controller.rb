@@ -1,0 +1,2 @@
+class CoverPhotoController < ApplicationController
+end
