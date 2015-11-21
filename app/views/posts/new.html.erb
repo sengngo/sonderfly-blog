@@ -3,6 +3,8 @@
 
 	<%= simple_form_for @post do |f| %>
     <%= f.input :cover_photo %>
+    <%= f.hidden_field :cover_photo_cache %>
+    <%= image_tag @post.cover_photo, :class => "img_responsive" %>
 		<%= f.input :title, placeholder: 'Title of your story', :class => 'post_title form-control form-group', label: false  %>
 		<%= f.input :intro, placeholder: 'Write a brief introduction', :class => 'post_intro', label: false %>
 		<%= f.text_area :body, placeholder: 'Tell your story', :id => 'post_body', label: false %>
