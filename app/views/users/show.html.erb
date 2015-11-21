@@ -1,18 +1,21 @@
-<h2>User Dashboard</h2>
-<!-- <%= image_tag 'user.png' %> -->
-<h2><%= @user.full_name %></h2>
-<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-<h4><%= @user.comments.count %> total comments</h4>
+<div class="page_wrapper">
+	<h2>User Dashboard</h2>
+	<!-- <%= image_tag 'user.png' %> -->
+	<h2><%= @user.full_name %></h2>
+	<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+	<h4><%= @user.comments.count %> total comments</h4>
 
 
-<h2 class="text-center">My Posts</h2>
-<% @user.posts.each do |post| %>
-<h2 class="text-center"><%= link_to post.title, post_path(post) %> <br /></h2>
-	<p class="text-center"><%= post.intro %></p>
-<% end %>
+	<h2 class="text-center">My Posts</h2>
+	<% @user.posts.each do |post| %>
+	<h2 class="text-center"><%= link_to post.title, post_path(post) %> <br /></h2>
+		<p class="text-center"><%= post.intro %></p>
+	<% end %>
 
-<h2 class="text-center">My Comments</h2>
-<% @user.comments.each do |comment| %>
-<h2 class="text-center"><%= link_to comment.post.title, post_path(comment.post) %></h2>
-    <%= comment.inspect %>
-<% end %>
+	<h2 class="text-center">My Comments</h2>
+	<% @user.comments.each do |comment| %>
+	<h2 class="text-center"><%= link_to comment.post.title, post_path(comment.post) %></h2>
+	    <%= comment.inspect %>
+	<% end %>
+
+</div>

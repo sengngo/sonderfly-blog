@@ -1,6 +1,7 @@
 
 <section class="post col-xs-10 col-xs-offset-1">
 	<%= simple_form_for @post do |f| %>
+		<%= f.input :cover_photo %>
 		<%= f.input :title, placeholder: 'Title of your story', :class => 'post_title form-control form-group', label: false  %>
 		<%= f.input :intro, placeholder: 'Write a brief introduction', :class => 'post_intro', label: false  %>
 		<%= f.input :body, placeholder: 'Tell your story', :class => 'post_body', label: false  %>

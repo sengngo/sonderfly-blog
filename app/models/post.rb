@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 	has_many :comments
 	has_one :cover_photo
 	
-	validates :title, :intro, :body, :presence => true
+	validates :title, :presence => true, length: { minimum: 2 }
+	validates :intro, :body, :presence => true
+
 	mount_uploader :cover_photo, CoverPhotoUploader
 end

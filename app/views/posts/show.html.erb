@@ -1,19 +1,17 @@
-<div class="col-xs-10 col-xs-offset-1">
+<div class="post_content">
   <%= image_tag @post.cover_photo, :class => "img_responsive" %>
-  <h1><%= @post.title %></h1>
+  <h1 class="title"><%= @post.title %></h1>
   <i><%= @post.intro %></i>
   <p><%= link_to @post.user.full_name, user_path(@post.user) %></p>
-  <p><%= @post.created_at.strftime("%b %d, %Y") %>
+  <p class='date'><%= @post.created_at.strftime("%b %d, %Y") %>
   <br/><br/>
-  <div class="fr-view">
+  <div class="body fr-view">
     <%= simple_format(@post.body) %>
   </div>
-   <div class="pull-right">
    <% if current_user && current_user == @post.user %>
     <%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %>
     <% end %>
     <%= link_to 'Delete', post_path(@post), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'},:class => 'btn btn-danger' %>
-  </div>
 </div>
 
 <div class="clear"></div>
@@ -24,7 +22,6 @@
   <%= f.submit "Publish", :class => 'btn btn-primary' %>
 <% end %>
 </div>
-
 
 <div class="comment_section col-xs-10 col-xs-offset-1">
   <h2>Comments</h2>
