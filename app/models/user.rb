@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :cover_photos
+
+  def full_name
+    first_name + " " + last_name
+  end
 end

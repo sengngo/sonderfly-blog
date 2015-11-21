@@ -19,12 +19,7 @@
   <div class="featured_posts third_page float">
     <h2><%= link_to post.title, post_path(post) %></h2>
     <h3><%= post.intro %></h3>
-
-		<% if post.user.present? %>
-	     <p><%= post.user.email %></p>
-	    <% end %>
+    <p>By <%= post.user.full_name %>
 	  </div>
 		<% end %>
 </section>
-
-This is a test for codeship.
