@@ -24,7 +24,7 @@
     </ul>
     <ul>
       <% if user_signed_in? %>
-        <li class="category">@user.full_name</li>
+        <li class="category"><h2><%= @user.full_name %></h2></li>
           <div class="buttons">
         <li><button class="button"><%= link_to 'New Post', new_post_path %> </button></li>
           </div>
