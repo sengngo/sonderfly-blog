@@ -6,7 +6,7 @@
 	 		<%= image_tag post.cover_photo, :class => 'img-responsive home_post' %>
 	  <div class="featured_posts">
 	    <h2><%= link_to post.title, post_path(post) %></h2>
-	    <h3><%= post.intro %></h3>
+	    <h4><%= post.intro %></h4>
 	    <p>By <%= post.user.full_name %>
 		  </div>
 			<% end %>
