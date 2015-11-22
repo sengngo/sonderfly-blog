@@ -1,22 +1,10 @@
-<div class="page_wrapper"
-	<section id="featured">
-		<h1> 
-			Together, </br>	let’s discover the world!
-		</h1>
-			<h2><%= link_to 'Join now and tell your story',new_user_registration_path %></h2>
-	
-			<button class="button"><%= link_to 'Get Started', new_user_registration_path %></button>
-			<button class="button"><%= link_to 'Learn More', new_user_registration_path %></button>
-
-	</section>
+<div class="page_wrapper">
 
 	<section class="post">
 
 	<% @posts.each do |post| %>
-	 	<div class="">
-	 		<%= image_tag post.cover_photo, :class => "img_responsive" %>
-	 	</div>
-	  <div class="featured_posts third_page float">
+	 		<%= image_tag post.cover_photo, :class => 'img-responsive home_post' %>
+	  <div class="featured_posts">
 	    <h2><%= link_to post.title, post_path(post) %></h2>
 	    <h3><%= post.intro %></h3>
 	    <p>By <%= post.user.full_name %>

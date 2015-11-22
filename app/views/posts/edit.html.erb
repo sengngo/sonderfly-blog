@@ -4,9 +4,9 @@
 		<%= f.input :cover_photo %>
 		<%= f.input :title, placeholder: 'Title of your story', :class => 'post_title form-control form-group', label: false  %>
 		<%= f.input :intro, placeholder: 'Write a brief introduction', :class => 'post_intro', label: false  %>
-		<%= f.input :body, placeholder: 'Tell your story', :class => 'post_body', label: false  %>
+		<%= f.input :body, placeholder: 'Tell your story', :class => 'body', label: false  %>
 
-		<%= f.submit 'Update', :class => 'btn btn-primary' %>
+		<%= f.submit 'Update', :class => 'button' %>
 
 		 <%= link_to 'Delete', post_path(@post), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this story?'},:class => 'btn btn-danger' %>
 	<% end %>

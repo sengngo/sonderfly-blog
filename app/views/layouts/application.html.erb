@@ -38,7 +38,7 @@
     <ul>
       <li class="category">Sonderfly</li>
       <li><%= link_to 'About Us', static_pages_about_path %></li>
-      <li><%= link_to 'Guidelines', '#' %></li>
+      <li><%= link_to 'Guidelines', static_pages_guidelines_path %></li>
       <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
     </ul>
   </div>
@@ -57,9 +57,7 @@
 
     <div class="buttons">
       <% if user_signed_in? %>
-          <li class="category">@user.full_name</li>
-            <div class="buttons">
-          <li><button class="button"><%= link_to 'New Post', new_post_path %> </button></li>
+          <button class="button"><%= link_to 'New Post', new_post_path %> </button>
             </div>
          <!-- <li><%= link_to 'My Posts', '#' %></li> -->
         <% end %>
