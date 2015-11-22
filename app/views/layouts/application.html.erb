@@ -43,18 +43,18 @@
     </ul>
   </div>
 </div>
-<% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
 
 
 <div id="main_content">
   <div id="header">
   <p>All Posts</p>
-
+    
+        <% if notice.present? %>
+          <p class="alert alert-info"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
     <div class="buttons">
       <% if user_signed_in? %>
           <button class="button"><%= link_to 'New Post', new_post_path %> </button>
@@ -63,6 +63,7 @@
         <% end %>
 
     </div>
+
        <%= yield %>
   </div>
   
