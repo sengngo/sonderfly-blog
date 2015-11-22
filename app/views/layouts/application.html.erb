@@ -9,12 +9,9 @@
 </head>
 <body>
   <div id="sidebar">
-    <div id="logo">
       <%= link_to root_path do %>
-       <!-- <%= image_tag 'sonderfly_logo.png' %> -->
-       <h2>Logo</h2>
+       <%= image_tag "sonderfly_logo.png", id: "logo" %>
       <% end %>
-    </div>
 
     <ul>
       <% if user_signed_in? %>
@@ -40,6 +37,7 @@
       <li><%= link_to 'About Us', static_pages_about_path %></li>
       <li><%= link_to 'Guidelines', static_pages_guidelines_path %></li>
       <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
+      <li class="category">Let's Get Social</li>
     </ul>
   </div>
 </div>
@@ -47,20 +45,18 @@
 
 <div id="main_content">
   <div id="header">
-  <p>All Posts</p>
-    
-        <% if notice.present? %>
+      <% if notice.present? %>
           <p class="alert alert-info"><%= notice %></p>
-        <% end %>
-        <% if alert.present? %>
+      <% end %>
+      <% if alert.present? %>
           <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
+      <% end %>
     <div class="buttons">
       <% if user_signed_in? %>
           <button class="button"><%= link_to 'New Post', new_post_path %> </button>
             </div>
          <!-- <li><%= link_to 'My Posts', '#' %></li> -->
-        <% end %>
+       <% end %>
 
     </div>
 
