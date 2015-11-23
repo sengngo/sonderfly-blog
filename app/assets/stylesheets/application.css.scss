@@ -29,8 +29,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 @-ms-view{
- width: device-width;		 width: device-width;
+width: device-width;
 }
 
 html, body {
@@ -204,11 +205,24 @@ a {
 			margin-left: auto;
 			margin-right: auto;
 		}
+
 		.date_and_author {
 			color: #9eafba;
 			margin: .5em 0 2em 0;
 			text-align: center;
 		}
+
+		@media (max-width: 1024px) {
+			.title {
+				font-size: 3em;
+			}
+			.intro {
+				font-size: 1.5em;
+			}
+			.body {
+				font-size: 1em;
+			}
+		} /*-- End Media for Post --*/
 		#comments {
 			h2 {
 				margin: 3em 0 1em 0;
@@ -256,6 +270,7 @@ a {
 				width: 60%;
 			}
 		}
+	
 	}
 	#page_wrapper {
 		padding: 3em;
