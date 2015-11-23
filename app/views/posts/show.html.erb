@@ -1,20 +1,27 @@
 <div class="post_wrapper">
-  <div class="post_content">
-    <%= image_tag @post.cover_photo, :class => "img_responsive" %>
-    <h1 id="title"><%= @post.title %></h1>
-    <h3 id="intro"><%= @post.intro %></h3>
-    <p>By <%= link_to @post.user.full_name, user_path(@post.user) %></p>
-    <p class='date'><%= @post.created_at.strftime("%b %d, %Y") %>
-    <br/><br/>
-
-    <div id="body"><%= simple_format(@post.body) %></div>
-
+  <div id="post_content">
+    <%= image_tag @post.cover_photo, :class => 'img-responsive cover_photo' %>
+    <div class="title">
+      <%= @post.title %>
+    </div>
+    <div class="intro">
+      <%= @post.intro %>
+      <p>By <%= link_to @post.user.full_name, user_path(@post.user) %><p>
+    </div>
+    <p>
+     
+    </p>
+    <div class='date_and_author'>
+       
+      <%= @post.created_at.strftime("%b %d, %Y") %><br /><br />
       <% if current_user && current_user == @post.user %>
-        <%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %>
+        <%= link_to 'Edit', edit_post_path(@post), :class => 'button' %>
+        <%= link_to 'Delete', post_path(@post), :method => :delete, :date => {:confirm => 'Are you sure? This cannot be undone'}, :class => 'button' %>
       <% end %>
-
-      <%= link_to 'Delete', post_path(@post), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'},:class => 'btn btn-danger' %>
-  
+    </div>
+      <div class="body">
+        <%= simple_format(@post.body) %>
+      </div>
 
   <div class="clear"></div>
   <div class="col-xs-10 col-xs-offset-1">

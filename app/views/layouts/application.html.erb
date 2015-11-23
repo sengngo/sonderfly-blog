@@ -24,10 +24,10 @@
     </ul>
     <ul>
       <% if user_signed_in? %>
-        <li class="category"><h2><%= @user.full_name %></h2></li>
-          <div class="buttons">
+        <li class="category"><%= link_to current_user.full_name, '#' %></li>
+      <div class="buttons">
         <li><button class="button"><%= link_to 'New Post', new_post_path %> </button></li>
-          </div>
+      </div>
        <!-- <li><%= link_to 'My Posts', '#' %></li> -->
       <% end %>
     </ul>
@@ -37,7 +37,10 @@
       <li><%= link_to 'About Us', static_pages_about_path %></li>
       <li><%= link_to 'Guidelines', static_pages_guidelines_path %></li>
       <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
-      <li class="category">Let's Get Social</li>
+      <li class="category">Social</li>
+      <li><%= link_to 'Twitter', 'http://twitter.com/sonderflytravel' %></li>
+      <li><%= link_to 'Facebook', 'https://www.facebook.com/SonderFly-1478745455768902' %></li>
+      <li><%= link_to 'Instagram', 'https://www.instagram.com/sonderfly' %></li>
     </ul>
   </div>
 </div>
