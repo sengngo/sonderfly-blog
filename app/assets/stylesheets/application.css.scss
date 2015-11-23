@@ -174,7 +174,7 @@ a {
 			font-size: 3em;
 			text-align: center;
    		position: center;
-
+   		max-width: 60%;
    		/* -webkit-font-smoothing: antialiased; */
 		} 
 
@@ -186,14 +186,17 @@ a {
 		.intro {
 		text-align: center;
 		font-size: 2em;
-		max-width: 75%;
+		max-width: 60%;
 		margin-left: auto;
 		margin-right: auto;
 		}
 
 		.body {
-			font-size: 1em;
+			font-size: 1.5em;
 			line-height: 1.75;
+			max-width: 60%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.date_and_author {
 			color: #9eafba;
