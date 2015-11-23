@@ -29,6 +29,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@-ms-view{
+ width: device-width;		 width: device-width;
+}
+
 html, body {
 	font-family: 'Raleway', sans-serif;
 }
@@ -171,7 +175,7 @@ a {
 			font-weight: 500;
 			text-decoration: none;
 			color: #000;
-			font-size: 3em;
+			font-size: 5em;
 			text-align: center;
    		position: center;
    		max-width: 60%;
@@ -249,7 +253,7 @@ a {
 				}
 			}
 			input[type="text"], textarea {
-				width: 50%;
+				width: 60%;
 			}
 		}
 	}
@@ -283,7 +287,7 @@ a {
 		margin: 2em 0;
 	}
 	input[type="text"], input[type="email"], input[type="password"], textarea {
-		width: 90%;
+		width: 100%;
 		border: 1px solid #d6dce0;
 		border-radius: .35em;
 		margin-top: 10px;
