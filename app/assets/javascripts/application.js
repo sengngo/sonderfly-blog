@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require disqus_rails
 //= require froala_editor.min.js
 
 //= require plugins/align.min.js

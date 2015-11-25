@@ -1,0 +1,9 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<p>
+		<%= f.text_area :message, :placeholder => 'Share your thoughts on this story', label: false %>
+	</p>
+	</br>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

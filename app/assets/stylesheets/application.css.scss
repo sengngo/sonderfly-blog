@@ -133,6 +133,7 @@ a {
 		padding: 1em 3em;
 		border-bottom: 1px solid #d6dce0;
 		background: #f5f7f9;
+		height: 50px;
 		color: #9eafba;
 		p {
 			display: inline;
@@ -142,8 +143,8 @@ a {
 			text-decoration: none;
 		}
 		.buttons {
-			float: right;
-			margin-top: -6px;
+			float: center;
+			margin: auto;
 			.button {
 				font-size: .8em;
 				margin-left: .5em;
@@ -184,7 +185,7 @@ a {
 			font-size: 4em;
 			text-align: center;
    		position: center;
-   		max-width: 60%;
+   		max-width: 70%;
    		margin-left: auto;
 			margin-right: auto;
    		/* -webkit-font-smoothing: antialiased; */
@@ -198,7 +199,7 @@ a {
 		.intro {
 		text-align: center;
 		font-size: 2em;
-		max-width: 60%;
+		max-width: 70%;
 		margin-left: auto;
 		margin-right: auto;
 		}
@@ -206,7 +207,7 @@ a {
 		.body {
 			font-size: 1.5em;
 			line-height: 1.75;
-			max-width: 60%;
+			max-width: 70%;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -240,6 +241,18 @@ a {
 				font-size: 1em;
 			}
 		} /*-- End Media for Post --*/
+
+		@media (max-width: 480px) {
+			.title {
+				font-size: 2em;
+			}
+			.intro {
+				font-size: 1em;
+			}
+			.body {
+				font-size: .75em;
+			}
+		} /*-- End Media for Post --*/
 		#comments {
 			h2 {
 				margin: 3em 0 1em 0;
@@ -265,7 +278,7 @@ a {
 						font-size: 0.7em;
 						text-transform: uppercase;
 					}
-					.comment_body {
+					.comment_message {
 						font-size: 1.2em;
 						margin: 0.2em 0 0 0;
 					}
@@ -277,10 +290,11 @@ a {
 				.button {
 					float: right;
 					margin: .5em;
-				}
+					}
 				.button-danger {
 					float: right;
 					margin: .5em;
+					color: red;
 				}
 			}
 			input[type="text"], textarea {
