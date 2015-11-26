@@ -1,0 +1,96 @@
+# Planning our application
+	1. Answer Questions
+		- What are we building?
+		- Who are we building it for?
+		- What features do we need to have?
+	2. User Stories
+	3. Model our data
+	4. Think through the pages we need in our app
+
+	## Questions
+		1. What we are building? We are building a social blogging platform that allows people to share their stories as they travel.
+
+		2. Who are we building it for? We are building it for the travel community and ourselves. In addition people who will follow our journey's such as friends and family. Lastly, we want to help inspire the next generation of travelers.
+
+		3. What features do we need to have?
+				-Posts
+						- Create / Edit / Destroy
+						- Comments (Disqus)
+						- Add Images
+						- Add Videos
+						- Save Posts (Bookmark)
+						- Save Draft
+						- Private Journaling
+
+				- Users (Devise)
+						- Roles - Admin
+						- Dashboard
+								- Lists all posts
+								- Lists all connections (follow)
+								- Account settings
+										- Password Update
+										- Email Update
+						- Messages
+						- Follow
+						- StoryFeed
+							-Discover
+								-Editors Choice
+								-Most Popular
+								-Categories
+
+	## User Stories
+			- As a user, I want to be able to create posts so that I can share what I am learning on my blog.
+			- As a user, I want to be able to edit and destroy posts, so that I can manage my stories
+			- As a user, I want to be able to write posts in markdown format (I don't think so?) so that it's easy for me to writes posts.
+			- As a user, I want to be able to save drafts so  I can come back to it
+			- As a user, I want to be able to post in private for myself
+			- As a user, I want to be able to add images to my posts
+			- As a user, I want to be able to add videos to my posts
+			- As a user, I want to be able to comment on stories and engage on comments on my posts
+			- As a user, I want other users to be able to connect with me
+			- As a user, I want to be able to connect with other users
+			- As a user, I want to be able to discover other posts
+			- As a user, I want to be able to search posts
+			- As a user, I want to be able to search other users
+
+
+	## Modeling our Data
+			**Posts**
+				title:string
+				intro:string
+				body:text
+			**Series**? - Title page for posts
+				title:string
+				description:text
+				link:string
+			**Users** (Devise Managed)
+			**Comments (Disqus?)**
+			**Side Comments(Similar to Medium)**
+				- https://github.com/aroc/side-comments
+			**Static Pages**
+				- Home
+				- About Us
+				- Guidelines
+				- User Agreement
+				- Contact Us
+				- FAQs
+
+	## Think through the pages we need in our app
+		Static Pages
+		- Home - Not signed in
+			- StoryFeed - Signed in
+		- About Us
+		- Guidelines
+		- User Agreement
+		- Contact Us
+		- FAQs
+
+		- Posts
+			- Posts#Show
+			- Posts#New (form for post)
+		- Photos (Carrierwave)
+		- Contact
+		- Dashboard (User page - Private)
+		- Profile Page (Public)
+		- Discover
+				- Categories

@@ -2,7 +2,7 @@
 	<div class="comment_content">
 		<%= link_to @comment.user.full_name, user_path, :class => "comment_name" %>
 		<p class="comment_time"><%= time_ago_in_words(@comment.created_at) %><br />
-		<p class="comment_body"><%=comment.message %></p>
+		<p class="comment_body"><%= @comment.message %></p>
 		
 
 		</div>
