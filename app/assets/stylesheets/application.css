@@ -7,7 +7,341 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ 
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@-ms-view{
+width: device-width;
+}
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#sidebar {
+	width: 250px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background: #f5f7f9;
+	padding: 7em 0 0 0;
+	border-right: 1px solid #d6dce0;
+	#logo {
+		width: 150px;
+		position: absolute;
+		right: 3em;
+		top: 3em;
+		bottom: 3em;
+	}
+	ul {
+		list-style: none;
+		text-align: right;
+		padding-right: 3em;
+		.category {
+			font-weight: 700;
+			font-size: 1.0em;
+			text-transform: uppercase;
+			color: #33acb7;
+		}
+		li {
+			padding: .5em 0;
+			a {
+				color: #9eafba;
+				text-decoration: none;
+				transition: all .4s ease;
+				&:hover {
+					color: #33acb7;
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
+
+		} /*-- End Media for Sidebar --*/
+
+		.active {
+			a {
+				color: #33acb7;
+			}
+		}
+	}
+	.sign_in {
+		position: absolute;
+		right: 3em;
+		top: 80%;
+		font-size: .8em;
+		color: #9eafba;
+	}
+}
+
+.button {
+	outline: none;
+	background: transparent;
+	border: 1px solid #d6dce0;
+	padding: .5em 1.5em;
+	border-radius: 1.5em;
+	&:hover {
+		border: 1px solid #33acb7;
+		color: #33acb7;
+		a {
+			color: #33acb7 !important;
+		}
+	}
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#main_content {
+	margin-left: 250px;
+	#header {
+		padding: 1em 3em;
+		border-bottom: 1px solid #d6dce0;
+		background: #f5f7f9;
+		height: 50px;
+		color: #9eafba;
+		p {
+			display: inline;
+		}
+		a {
+			color: #9eafba;
+			text-decoration: none;
+		}
+		.buttons {
+			float: center;
+			margin: auto;
+			.button {
+				font-size: .8em;
+				margin-left: .5em;
+			}
+		}
+	}
+	.post_wrapper {
+		padding: 3em;
+		border-bottom: 1px solid #d6dce0;
+	
+		.title {
+			margin: 0;
+			a {
+				font-weight: 500;
+				text-decoration: none;
+				color: #2a2f35;
+				font-size: 1.5em;
+				&:hover {
+					color: #33acb7;
+				}
+			}
+			
+		}
+		.date_and_author {
+			color: #9eafba;
+			margin: .5em 0 0 0;
+		}
+	}
+
+	#post_content {
+		padding: 1em 3em;
+
+		.title {
+			font-family: georgia; 
+			font-weight: 500;
+			text-decoration: none;
+			color: #000;
+			font-size: 4em;
+			text-align: center;
+   		position: center;
+   		max-width: 70%;
+   		margin-left: auto;
+			margin-right: auto;
+   		/* -webkit-font-smoothing: antialiased; */
+		} 
+
+		.cover_photo{ 
+			position: relative;
+			width: 100%;
+		}
+
+		.intro {
+		text-align: center;
+		font-size: 2em;
+		max-width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		}
+
+		.body {
+			font-size: 1.5em;
+			line-height: 1.75;
+			max-width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.date_and_author {
+			color: #9eafba;
+			margin: .5em 0 2em 0;
+			text-align: center;
+		}
+
+		@media (min-width: 1920px) {
+			.title {
+				font-size: 4em;
+			}
+			.intro {
+				font-size: 2.5em;
+			}
+			.body {
+				font-size: 1.75em;
+			}
+		} /*-- End Media for Post --*/
+
+		@media (max-width: 1024px) {
+			.title {
+				font-size: 3em;
+			}
+			.intro {
+				font-size: 1.5em;
+			}
+			.body {
+				font-size: 1em;
+			}
+		} /*-- End Media for Post --*/
+
+		@media (max-width: 480px) {
+			.title {
+				font-size: 2em;
+			}
+			.intro {
+				font-size: 1em;
+			}
+			.body {
+				font-size: .75em;
+			}
+		} /*-- End Media for Post --*/
+		#comments {
+			h2 {
+				margin: 3em 0 1em 0;
+				border-bottom: 1px solid #d6dce0;
+				padding-bottom: 0.5em;
+			}
+			h3 {
+				margin-top: 2em;
+			}
+			.comment {
+				border-bottom: 1px solid #d6dce0;
+				padding: 1.5em 2em;
+				.clear_both {
+					clear: both;
+				}
+				&:after {
+					clear: both;
+				}
+				.comment_content {
+					float: left;
+					.comment_name {
+						margin: 1em 0 0 0;
+						font-size: 0.7em;
+						text-transform: uppercase;
+					}
+					.comment_message {
+						font-size: 1.2em;
+						margin: 0.2em 0 0 0;
+					}
+					.comment_time {
+						margin-top: 1.2em;
+						font-size: .8em;
+					}
+				}
+				.button {
+					float: right;
+					margin: .5em;
+					}
+				.button-danger {
+					float: right;
+					margin: .5em;
+					color: red;
+				}
+			}
+			input[type="text"], textarea {
+				width: 60%;
+			}
+		}
+	
+	}
+	#page_wrapper {
+		padding: 3em;
+		#profile_image {
+			width: 300px;
+			float: left;
+			margin-right: 2em;
+			img {
+				width: 100%;
+				border-radius: 0.35em;
+			}
+		}
+		#content {
+			h1 {
+				font-weight: 500;
+			}
+			p {
+				font-size: 1.1em;
+				line-height: 1.75;
+			}
+			a {
+				color: #33acb7;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+	.links {
+		margin: 2em 0;
+	}
+	input[type="text"], input[type="email"], input[type="password"], textarea {
+		width: 100%;
+		border: 1px solid #d6dce0;
+		border-radius: .35em;
+		margin-top: 10px;
+		padding: .5em 1em;
+		line-height: 1.75;
+	}
+	input[type="text"] {
+		height: 35px;
+	}
+	textarea {
+		min-height: 180px;
+	}
+	input[type="submit"] {
+		outline: none;
+		background: transparent;
+		border: 1px solid #d6dce0;
+		padding: .5em 1.5em;
+		font-size: 1.1em;
+		border-radius: 1.5em;
+		margin-left: .5em;
+		&:hover {
+			border: 1px solid #33acb7;
+			color: #33acb7;
+		}
+	}
+}

@@ -3,13 +3,75 @@
 <head>
   <title>SonderflyBlog</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css/family=raleway:400, 700' %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div id="sidebar">
+      <%= link_to root_path do %>
+       <%= image_tag "sonderfly_logo.png", id: "logo" %>
+      <% end %>
 
-<%= yield %>
- <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <ul>
+      <% if user_signed_in? %>
+          <li><button class="button"><%= link_to 'My Profile', user_path(current_user) %></button></li>
+          <li><button class="button"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></button></li>
+          <% else %>
+         <li><button class="button"><%= link_to 'Log in', new_user_session_path %></button></li>
+          <li><button class="button"><%= link_to 'Sign up', new_user_registration_path %></button></li>
+        <% end %>
+    </ul>
+    <ul>
+      <% if user_signed_in? %>
+        <li class="category"><%= link_to current_user.full_name, '#' %></li>
+      <div class="buttons">
+        <li><button class="button"><%= link_to 'New Post', new_post_path %> </button></li>
+      </div>
+       <!-- <li><%= link_to 'My Posts', '#' %></li> -->
+      <% end %>
+    </ul>
+
+    <ul>
+      <li class="category">Sonderfly</li>
+      <li><%= link_to 'About Us', static_pages_about_path %></li>
+      <li><%= link_to 'Guidelines', static_pages_guidelines_path %></li>
+      <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
+      <li class="category">Social</li>
+      <li><%= link_to 'Twitter', 'http://twitter.com/sonderflytravel' %></li>
+      <li><%= link_to 'Facebook', 'https://www.facebook.com/SonderFly-1478745455768902' %></li>
+      <li><%= link_to 'Instagram', 'https://www.instagram.com/sonderfly' %></li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div id="main_content">
+  <div id="header">
+      <% if notice.present? %>
+          <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+          <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    <div class="buttons">
+      <% if user_signed_in? %>
+          <button class="button"><%= link_to 'New Post', new_post_path %> </button>
+            </div>
+         <!-- <li><%= link_to 'My Posts', '#' %></li> -->
+       <% end %>
+
+    </div>
+
+       <%= yield %>
+  </div>
+  
+ 
+</div>
+
+
+
 </body>
 </html>

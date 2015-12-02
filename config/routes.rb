@@ -1,8 +1,17 @@
 SonderflyBlog::Application.routes.draw do
-  devise_for :users
-  root 'posts#index'
+  get "users/dashboard"
+  get "static_pages/home"
+  get "static_pages/contact"
+  get "static_pages/about"
+  get "static_pages/guidelines"
+  root :to =>'static_pages#home'
 
-  resources :posts
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, :only => :show
+
+  resources :posts do
+    resources :comments
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

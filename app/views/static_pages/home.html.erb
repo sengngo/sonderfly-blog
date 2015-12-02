@@ -1,0 +1,10 @@
+<div class="page_wrapper">
+	<% @posts.each do |post| %>
+	  <div class="post_home">
+	  	<%= image_tag post.cover_photo, :class => 'img-responsive cover_photo' %>
+	    <h2 id="post_title"><%= link_to post.title, post_path(post) %></h2>
+	    <h4><%= post.intro %></h4>
+	    <p><%= post.created_at.time.strftime("%A") %>, <%= post.created_at.strftime("%b %d, %Y") %> | By <%= post.user.full_name %>
+		  </div>
+			<% end %>
+</div>
